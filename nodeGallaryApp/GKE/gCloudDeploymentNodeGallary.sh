@@ -1,8 +1,7 @@
-if [ "$LEVEL" == "DEBUG" ]; then
-	echo "Level is DEBUG. Press enter when paused"
-else
-	echo "Level is NOT DEBUG. There will be no wait"	
-fi
+#!/bin/bash
+
+set -ex
+# Coming back to root directory
 cd ../
 
 # We are creating shell script for deployment of this city_api project 
@@ -37,13 +36,6 @@ kubectl get deployments
 # kubectl get svc
 # kubectl delete svc NodeGallary-pv-pod
 # kubectl get svc
-
-if [ "$LEVEL" == "DEBUG" ]; then
-	echo "Press Enter if NodeGallary-logic is pushed to docker hub."
-	read NodeGallaryLogicIsPushed
-else
-	echo 'NodeGallary-logic pushed.'	
-fi
 
 # Appling deployment yaml file
 echo "deployment."
